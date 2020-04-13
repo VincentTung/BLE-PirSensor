@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PirSensor</string>
+    <string name="find_no_device">未发现PirSensor</string>
+    <string name="connected">连接成功！</string>
+    <string name="disconnected">断开连接！</string>
+    <string name="connecting">连接中...</string>
+    <string name="discover_services">发现服务开始</string>
+    <string name="subscribe_success">订阅成功</string>
+    <string name="require_premission_failed">获取权限失败</string>
+    <string name="device_not_support_bluetooth">设备不支持蓝牙</string>
+    <string name="trun_on_failed">打开失败</string>
+</resources>
