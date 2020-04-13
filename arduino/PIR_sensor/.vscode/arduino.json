@@ -1,0 +1,6 @@
+{
+    "port": "COM3",
+    "board": "esp32:esp32:m5stick-c",
+    "configuration": "PartitionScheme=default,UploadSpeed=115200,DebugLevel=none",
+    "sketch": "PIR_sensor.ino"
+}
