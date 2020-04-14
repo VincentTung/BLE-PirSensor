@@ -9,31 +9,14 @@ BLE-PirSensor
 ## 硬件
 <img src="https://github.com/VincentTung/BLE-PirSensor/raw/master/art/stickc.png">
 
-M5StickC 是一款基于esp32,可用来进行IoT开发的硬件，非常小巧。可使用[Arduino](https://www.arduino.cc/)和[UIFlow](http://flow.m5stack.com/)进行程序开发。
+[M5StickC](https://docs.m5stack.com/#/en/core/m5stickc) 是一款基于esp32,可用来进行IoT开发的硬件，非常小巧。可使用[Arduino](https://www.arduino.cc/)和[UIFlow](http://flow.m5stack.com/)进行程序开发。
 
 
 ## 软件
 #### 代码分为两部分
-#### 1.Arduino部分（C++）
+#### 1.Arduino部分代码（C++）
 
 ```cpp
-#include <BLEDevice.h>
-#include <BLEUtils.h>
-#include <BLEServer.h>
-#include <M5StickC.h>
-#include <Wire.h>
-
-using namespace std;
-
-#define DEVICE_NAME         "PIR_SENSOR"
-#define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
-#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
-#define DEVICE_BLE_ADDRESS  "D8:A0:1D:55:66:3A"
-#define TIME_INTERVAL       500
-
-
-char str[25];
-BLECharacteristic *pCharacteristic;
 
 /**
  * 
