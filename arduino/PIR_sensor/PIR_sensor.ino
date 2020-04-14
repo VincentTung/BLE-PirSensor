@@ -18,7 +18,7 @@ BLECharacteristic *pCharacteristic;
 
 /**
  * 
- * 初始化BLE
+ * init ble
  * 
  * */
 void initBLE(){
@@ -29,7 +29,9 @@ void initBLE(){
                                          CHARACTERISTIC_UUID,
                                          BLECharacteristic::PROPERTY_NOTIFY
                                        );
-  pCharacteristic->setValue("0");                                
+  //set default value                                     
+  pCharacteristic->setValue("0");  
+  //start service                              
   pService->start();
 
   BLEAdvertising *pAdvertising = pServer->getAdvertising();
@@ -40,14 +42,12 @@ void initBLE(){
 }
 
 void setup() {
-  // put your setup code here, to run once:
   M5.begin();
   M5.Lcd.setRotation(3);
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.println("PIR TEST");
 
   pinMode(36,INPUT_PULLUP);
-
   initBLE();
 }
 void closeLED(){
