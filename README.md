@@ -14,7 +14,7 @@ BLE-PirSensor
 
 ## 软件
 #### 代码分为两部分
-#### 1.Arduino部分代码（C++）[APK](https://github.com/VincentTung/BLE-PirSensor/raw/master/apk/app-release.apk)
+#### 1.Arduino部分代码（C++）[APK Download](https://github.com/VincentTung/BLE-PirSensor/raw/master/apk/app-release.apk)
 
 ```cpp
 
