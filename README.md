@@ -13,7 +13,7 @@ BLE-PirSensor
 
 ## 程序
 #### 代码分为两部分
-#### Arduino部分
+#### Arduino部分（C++）
 
 ```cpp
 #include <BLEDevice.h>
@@ -91,7 +91,7 @@ void loop() {
 }
 
 ```
-#### Android App 部分代码
+#### Android App 部分代码(kotlin)
 ```kotlin
   /**
      * 连接设备
