@@ -1,19 +1,19 @@
 <img src="https://github.com/VincentTung/BLE-PirSensor/raw/master/art/ic_launcher.png">
 BLE-PirSensor
 
-##关于M5StickC
+## 关于M5StickC
 <img src="https://github.com/VincentTung/BLE-PirSensor/raw/master/art/stickc.png">
 [M5StickC](https://docs.m5stack.com/#/en/core/m5stickc)是一款基于esp32,可用来进行IoT开发的硬件，非常小巧。可使用[Arduino](https://www.arduino.cc/)和[UIFlow](http://flow.m5stack.com/)进行程序开发。
 
-##项目介绍
+## 项目介绍
 <img src="https://github.com/VincentTung/BLE-PirSensor/raw/master/art/stickc_with_pir.png">
 
 
 一个简单的人体感应门铃系统,使用M5StickC、人体红外传感器（AS312）开发，通过BLE和手机连接，当检测到人体时，手机APP进行闪屏提示。
 
-##程序
-####代码分为两部分
-####Arduino部分
+## 程序
+#### 代码分为两部分
+#### Arduino部分
 
 ```cpp
 #include <BLEDevice.h>
@@ -91,7 +91,7 @@ void loop() {
 }
 
 ```
-####Android App 部分代码
+#### Android App 部分代码
 ```kotlin
   /**
      * 连接设备
