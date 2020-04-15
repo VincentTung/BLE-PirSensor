@@ -145,4 +145,4 @@ void loop() {
     }
 ```
 ## 演示
-待上传视频或者gif
+<img src="https://github.com/VincentTung/BLE-PirSensor/raw/master/art/show_small.gif">
