@@ -86,8 +86,8 @@ class MainActivity : FragmentActivity() {
                     super.onScanResult(callbackType, result)
                     if (result?.device?.address == PIR_DEVICE_ADDRESS) {
                         bluetoothLeScanner?.stopScan(this)
-                        result.device?.let { device ->
-                            connectDevice(device)
+                        result.device?.apply {
+                            connectDevice(this)
                         }
 
                     }
@@ -111,8 +111,8 @@ class MainActivity : FragmentActivity() {
                     when (newState) {
                         BluetoothProfile.STATE_CONNECTED -> {
                             showToast(R.string.connected)
-                            gatt?.discoverServices()?.let { started ->
-                                if (started) {
+                            gatt?.discoverServices()?.apply {
+                                if (this) {
                                     showToast(R.string.discover_services)
                                 }
                             }
@@ -127,10 +127,11 @@ class MainActivity : FragmentActivity() {
             override fun onServicesDiscovered(gatt: BluetoothGatt?, status: Int) {
                 super.onServicesDiscovered(gatt, status)
 
-                gatt?.services?.let { services ->
-                    services.forEach { service ->
+                gatt?.services?.apply {
+                    this.forEach { service ->
                         if (service.uuid.toString() == PIR_SERVICE_UUID) {
                             checkCharacteristic(gatt, service)
+                            return@forEach
                         }
                     }
                 }
@@ -139,8 +140,8 @@ class MainActivity : FragmentActivity() {
             override fun onCharacteristicChanged(gatt: BluetoothGatt?, characteristic: BluetoothGattCharacteristic?) {
                 super.onCharacteristicChanged(gatt, characteristic)
                 val value = characteristic?.value?.toString(Charsets.UTF_8)
-                value?.let {
-                    if (it == BLINK_VALUE) {
+                value?.apply {
+                    if (this == BLINK_VALUE) {
                         runOnUiThread {
                             blinkScreen()
                         }
@@ -159,6 +160,7 @@ class MainActivity : FragmentActivity() {
             if (characteristic.properties and BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0 && characteristic.uuid.toString() == PIR_CHARACTERISTIC_UUID) {
                 gatt.setCharacteristicNotification(characteristic, true)
                 showToast(R.string.subscribe_success)
+                return@forEach
             }
 
         }
@@ -172,11 +174,14 @@ class MainActivity : FragmentActivity() {
             mAnimator = null
         }
         mAnimator = ObjectAnimator.ofInt(ll_container, "backgroundColor", Color.WHITE, Color.RED, Color.WHITE)
-        mAnimator!!.duration = 200
-        mAnimator!!.setEvaluator(ArgbEvaluator())
-        mAnimator!!.repeatMode = ValueAnimator.REVERSE
-        mAnimator!!.repeatCount = 2
-        mAnimator!!.start()
+        mAnimator!!.apply {
+            duration = BLINK_DURATION
+            setEvaluator(ArgbEvaluator())
+            repeatMode = ValueAnimator.REVERSE
+            repeatCount = BLINK_REPEAT_COUNT
+            start()
+
+        }
 
     }
 

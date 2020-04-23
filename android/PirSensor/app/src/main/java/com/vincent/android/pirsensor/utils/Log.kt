@@ -1,7 +1,6 @@
 package com.vincent.android.pirsensor.utils
 
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
 
 fun FragmentActivity.logd(message:String){
