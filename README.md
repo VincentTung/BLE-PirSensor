@@ -1,13 +1,13 @@
-<img src="https://github-1304799125.cos.ap-beijing.myqcloud.com/ble/art/ic_launcher.png">
+<img src="./art/ic_launcher.png">
 BLE-PirSensor
 
 ## 项目介绍
-<img src="https://github-1304799125.cos.ap-beijing.myqcloud.com/ble/art/stickc_with_pir.png">
+<img src="./art/stickc_with_pir.png">
 
 一个简单的人体感应门铃系统,使用M5StickC、人体红外传感器（AS312）开发，通过BLE和手机连接，当检测到人体时，手机APP进行闪屏提示。
 
 ## 硬件
-<img src="https://github-1304799125.cos.ap-beijing.myqcloud.com/ble/art/stickc.png">
+<img src="./art/stickc.png">
 
 [M5StickC](https://docs.m5stack.com/#/en/core/m5stickc) 是一款基于esp32,可用来进行IoT开发的硬件，非常小巧。可使用[Arduino](https://www.arduino.cc/)和[UIFlow](http://flow.m5stack.com/)进行程序开发。
 
